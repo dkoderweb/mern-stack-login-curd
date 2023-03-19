@@ -2,11 +2,10 @@ const dotenv = require("dotenv");
 const express = require("express");
 const app = express();
 
-dotenv.config({path:'./.env'})
-
-require('../DB/conn');
+dotenv.config({path:'./.env'}) 
+require('./DB/conn');
 const port = process.env.PORT;
-
+const User = require("./Models/userSchema")
 const middelware =(req, res, next )=>{
     console.log("middelware");
     next()
